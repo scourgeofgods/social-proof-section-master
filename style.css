@@ -1,0 +1,195 @@
+@import url("https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;500;700&display=swap");
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  font-size: 62.5%;
+  --ff-base: "League Spartan", sans-serif;
+  --fw--regular: 400;
+  --fw-medium: 500;
+  --fw-bold: 700;
+  --very-dark-magenta: hsl(300, 43%, 22%);
+  --soft-pink: hsl(333, 80%, 67%);
+  --dark-grayish-magenta: hsl(303, 10%, 53%);
+  --light-grayish-magenta: hsl(300, 24%, 96%);
+  --white: hsl(0, 0%, 100%);
+}
+
+body {
+  font-family: var(--ff-base);
+  -webkit-font-smoothing: antialiased;
+  display: grid;
+  place-content: center;
+  min-height: 100vh;
+}
+
+h1,
+p {
+  overflow-wrap: break-word;
+}
+.card {
+  padding: 2rem;
+  box-shadow: 0 0 1px 0 var(--dark-grayish-magenta);
+  border-radius: 1px;
+}
+.card__header {
+  background-image: url("./images/bg-pattern-top-mobile.svg");
+  background-repeat: no-repeat;
+  background-repeat: center center;
+  background-size: contain;
+}
+.card__header--info {
+  display: grid;
+  gap: 2rem;
+  text-align: center;
+}
+.card__header--info__title {
+  color: var(--very-dark-magenta);
+  font-weight: var(--fw-bold);
+  font-size: 3.9rem;
+  margin-top: 1em;
+}
+.card__header--info__details {
+  font-size: 1.72rem;
+  line-height: 2.4rem;
+  font-weight: var(--fw-medium);
+  color: var(--dark-grayish-magenta);
+}
+.card__header--ratings {
+  list-style: none;
+  text-align: center;
+  margin: 4rem 0;
+}
+.card__header--ratings__rating {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding: 1.6rem;
+
+  margin-bottom: 1.6rem;
+  background-color: var(--light-grayish-magenta);
+  color: var(--very-dark-magenta);
+  font-weight: var(--fw-bold);
+  border-radius: 1rem;
+  font-size: 1.62rem;
+}
+.card__header--rating__rating--stars {
+  display: flex;
+  justify-content: center;
+  gap: 0.8rem;
+}
+
+.card__reviews {
+  background-image: url("./images/bg-pattern-bottom-mobile.svg");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: grid;
+  gap: 1.6rem;
+}
+
+.card__reviews--review {
+  background-color: var(--very-dark-magenta);
+  color: var(--light-grayish-magenta);
+  font-size: 1.6rem;
+  padding: 3.2rem;
+  border-radius: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2.4rem;
+}
+.card__reviews--review__person {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+.card__reviews--review__person img {
+  height: 5rem;
+  width: 5rem;
+  object-fit: cover;
+  border-radius: 999rem;
+}
+.card__reviews--review__person--info--name {
+  font-size: 1.7rem;
+  line-height: 2.4rem;
+  font-weight: var(--fw--regular);
+}
+.card__reviews--review__person--info--role {
+  color: var(--soft-pink);
+  font-size: 1.6rem;
+  line-height: 1.6rem;
+  letter-spacing: 0.05rem;
+}
+.card__reviews--review__quote {
+  line-height: 2.4rem;
+}
+
+@media (min-width: 1024px) {
+  body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .card {
+    padding: 7.2rem;
+    display: grid;
+    gap: 6rem;
+    max-width: 128rem;
+  }
+  .card__header {
+    background-image: url("./images/bg-pattern-top-desktop.svg");
+    background-position: top left;
+    background-repeat: no-repeat;
+    background-size: contain;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12.8rem;
+  }
+  .card__header--info {
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+  }
+  .card__header--info__title {
+    font-size: 5.6rem;
+    margin: 5.6rem 0 0;
+  }
+  .card__header--info__details {
+    font-size: 1.9rem;
+    line-height: 2.6rem;
+  }
+  .card__header--ratings__rating {
+    flex-direction: row;
+  }
+  .card__header--ratings__rating:first-child {
+    transform: translateX(-20%);
+  }
+  .card__header--ratings__rating:nth-child(2) {
+    transform: translateX(-10%);
+  }
+  .card__reviews {
+    background-image: url("/images/bg-pattern-bottom-desktop.svg");
+    background-position: bottom right;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .review {
+    padding: 5rem 2.5rem;
+  }
+  .card__reviews--review:nth-child(2) {
+    transform: translateY(10%);
+  }
+  .card__reviews--review:last-child {
+    transform: translateY(20%);
+  }
+}
